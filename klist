@@ -1,0 +1,5 @@
+#!/bin/bash
+
+RELEASE=$1
+echo release: $RELEASE
+kubectl get pods | grep $RELEASE

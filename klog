@@ -1,0 +1,7 @@
+#!/bin/bash
+
+RELEASE=$1
+echo release: $RELEASE
+POD=`kubectl get pods | grep $RELEASE | grep hlweb | grep -v worker | awk '{print $1}'`
+echo pod: $POD
+kubectl logs -f $POD -c hlweb
